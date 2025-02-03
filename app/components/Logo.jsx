@@ -4,7 +4,7 @@ import Image from "next/image"
 const Logo = () => {
     return (
         <>
-            <div class="hidden lg:flex">
+            <div className="hidden lg:flex">
                 <Link href="/">
                     <Image
                         className="h-6 w-auto"
