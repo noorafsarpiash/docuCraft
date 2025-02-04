@@ -54,6 +54,7 @@ const Sidebar = ({ docs }) => {
 
         setRootNodes([...roots]);
         setNonRootNodesGrouped({ ...nonRoots });
+        // eslint-disable-next-line react-hooks/exhaustive-deps
     }, [pathName])
 
 
