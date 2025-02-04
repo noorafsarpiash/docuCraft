@@ -2,6 +2,8 @@ import localFont from "next/font/local";
 import "./globals.css";
 import { getDocuments } from "@/lib/doc";
 import Header from "./components/Header";
+import { Suspense } from "react";
+import Loading from "./components/Loading";
 
 const geistSans = localFont({
   src: "./fonts/GeistVF.woff",
@@ -27,6 +29,7 @@ export default function RootLayout({ children }) {
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}>
      <div className="h-full lg:ml-72 xl:ml-80">
+      <Suspense fallback={<Loading/>} >
       <Header docs={allDocuments}/>
       <div className="relative px-4 pt-14 sm:px-6 lg:px-8">
       <main className="flex-auto py-16">
@@ -43,7 +46,7 @@ export default function RootLayout({ children }) {
       </main>
       </div>
 
-       
+      </Suspense>
       </div>
       </body>
     </html>
